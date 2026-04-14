@@ -14,7 +14,7 @@ This work is licensed under a
 
 またGitをインストールいただければご自身のコンピュータの端末で
 ```
-git clone https://github.com/TakeshiKawasaki/2025-simulation-tutorial.git repo
+git clone https://github.com/TakeshiKawasaki/2026-simulation-tutorial.git repo
 ```
 を実行すると　新たに生成されるフォルダ'repo'以下に当リポジトリ内の全てのデータが入ります．<br>
 参考 [git install][1]
