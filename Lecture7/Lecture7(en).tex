@@ -1,0 +1,585 @@
+%%%%writte in utf8 %%%%%%%%%%%%%%
+%\documentclass[dvipdfmx,cjk,8pt]{beamer}
+\documentclass[aspectratio=169,dvipdfmx,cjk,handout,hyperref,8pt]{beamer} %% 資料用
+%\documentclass[dvipdfm,cjk]{beamer} %% オプションは環境や利用するプログラムに
+%\documentclass[dvips,cjk]{beamer}   %% よって変える
+\usepackage{pxjahyper}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks=false,
+    citebordercolor=green,
+    linkbordercolor=blue,
+    linkcolor=blue,
+    urlbordercolor=cyan,
+}
+\AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}} %% しおりが文字化けしないように
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+
+%\setbeamertemplate{navigation symbols}{} %% 右下のアイコンを消す
+\usepackage{tcolorbox}
+\usepackage{dcolumn}   % needed for some tables
+\usepackage{bm}        % for math
+\usepackage{otf}
+\usepackage{amssymb, amsmath, amsfonts}   % for math
+%\usepackage{lipsum}        % for math
+\usepackage{color}
+\usepackage{wrapfig}
+
+%%%%%% font %%%%%%%%%%%%
+%\usepackage{mathpazo}
+ %\usepackage{cmbright}
+\usepackage {pxfonts}
+%\usepackage{kurier}
+%\usepackage {fourier}
+%%%%%%%%%%%%%%%%%%%
+\setbeamerfont{frametitle}{series=\bfseries}
+
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{ulem}
+\usepackage{listings}
+ 
+\usepackage{adjustbox}
+%\usepackage{lstlinebgrd}
+
+\definecolor{darkred}{rgb}{0.7, 0, 0}
+\definecolor{darkgreen}{rgb}{0, 0.4, 0}
+\definecolor{navy}{rgb}{0, 0, 0.5}
+\definecolor{purple}{rgb}{0.45, 0, 0.45}
+\definecolor{codebg}{rgb}{0.95, 0.95, 0.95}
+\lstset{
+  language={C++}, %プログラミング言語によって変える。
+  basicstyle=\ttfamily,
+  basicstyle={\ttfamily\small},
+  keywordstyle={\color{blue}},
+  commentstyle={\color{darkgreen}},
+  backgroundcolor=\color{codebg},
+  stringstyle=\color{red},
+  showspaces=false, 
+  showstringspaces=false,
+  numbers=left,
+  breaklines=true,      
+  showtabs=false,
+  tabsize=2,
+}
+\usepackage{ccaption}
+% avoids incorrect hyphenation, added Nov/08 by SSR
+\hyphenation{ALPGEN}
+\hyphenation{EVTGEN}
+\hyphenation{PYTHIA}
+\DeclareGraphicsExtensions{{.pdf}}
+\newcommand{\TK}[1]{{\bf \color{red} #1}}
+\newcommand{\tk}[1]{{\bf \color{blue} #1}}
+\newcommand{\modify}[1]{{\color{blue} #1}}
+\newcommand{\del}{{\rm d}}
+\newcommand{\pdif}[2]{\frac{\partial #1}{\partial #2}}
+%%%figure capution%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\figurename}{{\bf Fig.}} 
+\renewcommand{\lstlistingname}{{\tk{リスト}}} 
+\renewcommand{\sectionname}{{\bf Sec.}}
+\renewcommand{\thefigure}{{\bf \arabic{figure}}}
+\newcommand{\fig}{{\bf Fig.}}
+\setbeamertemplate{caption}[numbered]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+%\usetheme{CambridgeUS}         %% theme の選択
+%\usetheme{Boadilla}           %% Beamer のディレクトリの中の
+%\usetheme{Madrid}             %% beamerthemeCambridgeUS.sty を指定
+\usetheme{Antibes}            %% 色々と試してみるといいだろう
+%\usetheme{Montpellier}        %% サンプルが beamer\doc に色々とある。
+%\usetheme{Berkeley}
+%\usetheme{Goettingen}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Luebeck}
+%\usetheme{Frankfurt} 
+
+%\usecolortheme{rose}          %% colortheme を選ぶと色使いが変わる
+%\usecolortheme{albatross}
+
+%\useoutertheme{shadow}                 %% 箱に影をつける
+\usefonttheme{professionalfonts}       %% 数式の文字を通常の LaTeX と同じにする
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{transparent}         %% 消えている文字をうっすらと表示する
+\setbeamertemplate{theorems}[numbered]  %% 定理に番号をつける
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{proposition}[thm]{Proposition}
+\theoremstyle{example}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{question}[thm]{Question}
+\newtheorem{prob}[thm]{Problem}
+%\usepackage{otf}
+\useoutertheme{infolines} % Alternatively: miniframes, infolines, split
+%\useinnertheme{circles}
+\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+\definecolor{UBCgrey}{rgb}{0.3686, 0.5255, 0.6235} % UBC Grey (secondary)
+\definecolor{aliceblue}{RGB}{240,248,255}
+\setbeamercolor{palette primary}{bg=aliceblue,fg=blue}
+%\setbeamercolor{palette primary}{bg=lightgray,fg=blue}
+%\setbeamercolor{palette primary}{bg=white,fg=blue}
+\setbeamercolor{palette secondary}{bg=white,fg=blue}
+%\setbeamercolor{palette tertiary}{bg=UBCblue,fg=white}
+%\setbeamercolor{palette quaternary}{bg=UBCblue,fg=white}
+\setbeamercolor{structure}{fg=blue} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=blue} % TOC sections
+\setbeamercolor{subsection in head/foot}{bg=white,fg=blue}
+\title[Title Without Rambling]{My Rambling Presentation Title}
+%%%%itemの階層
+\usepackage{minijs}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+%タイトル色
+%\renewcommand{\labelitemi}{$\star$}
+
+%%%%%%%%%　（連続ページの番号付け）
+\setbeamertemplate{frametitle continuation}{%
+    \ifnum\insertcontinuationcount>1
+    {\small(\insertcontinuationcount)}
+    \fi} 
+%%%%%%%%%
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\bfr}{\begin{frame}}
+\newcommand{\efr}{\end{frame}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\ba}{\begin{align}}
+\newcommand{\ea}{\end{align}}
+\newcommand{\ave}[1]{\left\langle {#1} \right\rangle}
+\newcommand{\odif}[2]{\frac{{\rm d} #1}{{\rm d} #2}}
+\section<mode specification>[short section name]{section name}
+\setbeamersize{text margin left=35pt, text margin right=35pt}%左右余白
+
+\begin{document}
+
+\title[Simulation Tutorial]{\bf Simulation Tutorial\\Lecture 7} 
+\author[Kawasaki]{Takeshi Kawasaki}       %% This information will be used in various places
+\institute[D3C]{\small{D3 Center, The University of Osaka }}   %% It is recommended to set this as much as possible
+\date{Last update: \today}
+\begin{frame}                  %% A single slide between \begin{frame}.. \end{frame}
+\titlepage                     %% Title page
+\end{frame}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \frametitle{\bf Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}                  %% Table of contents (omit if not needed)
+\frametitle{\bf Contents} 
+\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Assignment 6}
+\begin{frame}[allowframebreaks,fragile]{\thesection.~\insertsection}  
+\begin{exampleblock}{\fbox{Assignment 6} Implementation of Multi-Particle Simulation in a Langevin Bath (Phase Separation)}
+Distribute 1024 disks with a diameter $a$ on a square plane with a side length of $L=40a$ under periodic boundary conditions. The motion of disk $j$ is driven by the Langevin equation:
+$m\odif{{\bf v}_j(t)}{t} = -\zeta {\bf v}_j(t) + {\bf F}^{\rm I}_j(t) + {\bf F}^{\rm B}_j(t)$.
+Here, ${\bf F}^{\rm B}_j(t)$ is the thermal fluctuation force, satisfying the fluctuation-dissipation theorem:
+$\langle {\bf F}^{\rm B}_j(t) {\bf F}^{\rm B}_k(t')\rangle = 2k_BT\zeta \delta(t-t')\delta_{jk} {\bf 1}$.
+${\bf F}^{\rm I}_j(t)$ is the interaction force, given by the Lennard-Jones potential:
+\be
+U(r_{jk}) = 4\epsilon\left[\left(\frac{a_{jk}}{r_{jk}}\right)^{12}-\left(\frac{a_{jk}}{r_{jk}}\right)^{6}\right] + C_{jk} \quad (r_{jk}<a_{\rm cut})
+\ee
+The cutoff length is set to $a_{\rm cut} = 2.5a$. Let the unit of time be $t_0 = \sqrt{ma^2/\epsilon}$, the unit of length be $a$, and the friction coefficient be $\zeta = \sqrt{m\epsilon/a^2}$. Numerically observe the presence or absence of phase separation as the dimensionless temperature $k_BT/\epsilon$ is varied.
+\end{exampleblock}
+\noindent\tk{\fbox{Solution}}\\
+The sample program for Assignment 6, "langevin\_many.cpp", is shown in Listing 1 for reference. Here, a crystalline configuration is randomly mixed at a dimensionless temperature $T^* = 5.0$ and then cooled to the target $T^*$ (specified by the parameter $temp$). The behavior at different target temperatures, $T^* = 0.2, 0.4, 0.6, 1.0$, is illustrated in Fig. \ref{fig:temp}.
+
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true, frame=single,caption= Sample program for independent assignment 6: “langevin\_many.cpp”.
+Available from the following GitHub repository \href{https://github.com/TakeshiKawasaki/2026-simulation-tutorial/tree/main/Lecture7}{\TK{\underbar{[Link]}}}.]
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <iostream>
+#include <fstream>
+#include <cfloat>
+#include "BM.h"
+
+#define Np 1024
+#define L 40.0
+#define tmax 100
+#define dt 0.01
+#define temp 0.2
+#define dim 2
+#define cut 2.5
+#define polydispersity 0.0
+
+void ini_coord_square(double (*x)[dim]){
+  int num_x = (int)sqrt(Np)+1;
+  int num_y = (int)sqrt(Np)+1;
+  int i,j,k=0;
+  double shift;
+  for(j=0;j<num_y;j++){
+    for(i=0;i<num_x;i++){
+      x[i+num_x*j][0] = i*L/(double)num_x;
+      x[i+num_x*j][1] = j*L/(double)num_y;
+      k++;
+      if(k==Np)
+        break;
+    }
+       if(k==Np)
+        break;
+  }
+}
+
+void set_diameter(double *a){
+  for(int i=0;i<Np;i++)
+    a[i]=1.0+polydispersity*gaussian_rand();
+}
+
+void p_boundary(double (*x)[dim]){
+  for(int i=0;i<Np;i++)
+    for(int j=0;j<dim;j++)
+      x[i][j]-=L*floor(x[i][j]/L);
+}
+
+void ini_array(double (*x)[dim]){
+  for(int i=0;i<Np;i++)
+    for(int j=0;j<dim;j++)
+      x[i][j]=0.0;
+}
+
+void calc_force(double (*x)[dim],double (*f)[dim],double *a){
+  double dx,dy,dr2,dUr,w2,w6,w12,aij;
+
+  ini_array(f);
+    
+  for(int i=0;i<Np;i++)
+    for(int j=0;j<Np;j++){
+      if(i<j){
+       dx=x[i][0]-x[j][0];
+       dy=x[i][1]-x[j][1];
+       dx-=L*floor((dx+0.5*L)/L);
+       dy-=L*floor((dy+0.5*L)/L);
+       dr2=dx*dx+dy*dy;
+       if(dr2<cut*cut){
+          aij=0.5*(a[i]+a[j]);
+          w2=aij/dr2;
+          w6=w2*w2*w2;
+          w12=w6*w6;
+          dUr=-48.*w12/dr2+24.*w6/dr2;
+          f[i][0]-=dUr*dx;
+          f[j][0]+=dUr*dx;
+          f[i][1]-=dUr*dy;
+          f[j][1]+=dUr*dy;
+          }
+        }
+    }
+}
+
+void eom(double (*v)[dim],double (*x)[dim],double (*f)[dim],double temp0){
+  double zeta=1.0;
+  double fluc=sqrt(2.*zeta*temp0*dt);
+  for(int i=0;i<Np;i++)
+    for(int j=0;j<dim;j++){
+      v[i][j]+=-zeta*v[i][j]*dt+f[i][j]*dt+fluc*gaussian_rand();
+      x[i][j]+=v[i][j]*dt;
+    } 
+}
+
+void output(double (*x)[dim],double *a){
+  char filename[128];
+  std::ofstream file;
+  static int j=0; 
+  sprintf(filename,"coord_T%.3f_%d.dat",temp,j);
+  file.open(filename); 
+  for(int i=0;i<Np;i++)
+    file <<x[i][0]<<"\t"<<x[i][1]<<"\t"<<a[i]<<std::endl;
+  file.close();
+  j++;
+}
+
+int main(){
+  double x[Np][dim],v[Np][dim],f[Np][dim],a[Np];
+  double tout=0.0;
+  int j=0;
+  set_diameter(a);
+  ini_coord_square(x);
+  ini_array(v);
+  
+  while(j*dt < 10.0){
+    j++;
+    calc_force(x,f,a);
+    eom(v,x,f,5.0);
+  }
+  j=0;
+  while(j*dt < tmax){   
+    j++;
+    calc_force(x,f,a);
+    eom(v,x,f,temp);
+    p_boundary(x);
+    if(j*dt >= tout){
+      output(x,a);
+      tout+=10.;
+    }
+  }
+  return 0;
+}
+\end{lstlisting}
+
+
+\begin{figure}[h]
+\includegraphics[scale=0.2]{LJ.pdf}
+\caption{Particle distribution when the dimensionless temperature $T^*$ is varied, with the length of one side of the periodic boundary being $L=40a$ and all particle diameters being $a$. Phase separation can be observed, especially at low temperatures. Additionally, phase separation seems to start occurring around $T^* = 1$. \tk{[Note]}~$T^* = 1$ corresponds to $\epsilon = k_\mathrm{B}T$, where the depth of the potential well is comparable to the thermal energy.}
+\label{fig:temp}
+\end{figure}
+
+
+
+\end{frame}
+
+
+\section{Molecular Dynamics Simulation}
+\begin{frame}[allowframebreaks]
+\frametitle{\bf \thesection~\insertsection}
+\begin{block}{Molecular Dynamics Simulation (Classical MD)}
+\bi
+\item In this chapter, we will cover simulations of systems where atoms and molecules are driven by Newton's equations of motion: \TK{Molecular Dynamics (MD) Simulation}.
+\item Such systems, where quantities like momentum, energy, and angular momentum are conserved, are referred to as Hamiltonian systems.
+\item Therefore, fluctuating forces and dissipation are not explicitly included, and the temperature does not remain constant (the system generally reaches a steady state).
+\item The statistical ensemble for such a system is called the $NVE$ ensemble, or the microcanonical ensemble.
+\ei
+\end{block}
+\end{frame}
+
+\subsection{Equations of Motion and Their Nondimensionalization}
+\begin{frame}[allowframebreaks]
+\frametitle{\bf \thesection.\thesubsection~\insertsubsection}
+\tk{\fbox{Equations of Motion and Their Nondimensionalization}}
+\bi 
+\item The equation of motion for a classical particle $j$ with mass $m$ interacting with other particles through an interparticle potential $U$ is given by,
+\be
+m \ddot{{\bf r}}_j = -\pdif{U(\{ {\bf r} \})}{{\bf r}_j}
+\ee
+\item The equation of motion itself is much simpler compared to the Langevin equation, and nondimensionalization for computational implementation is relatively straightforward.
+\item Specifically, by choosing the unit of length as $a$, the unit of energy as $\epsilon$, and the unit of time as $t_0$, the equation of motion can be rewritten in nondimensionalized variables, denoted with tildes, as
+\be
+m \frac{a}{t_0^2}\ddot{\tilde{{\bf r}}}_j = -\frac{\epsilon}{a} \pdif{\tilde{U}(\{ \tilde{\bf r} \})}{{\tilde{\bf r}}_j}
+\ee
+\item Dividing both sides by $m\frac {a}{t_0^2}$ gives
+\be
+\ddot{\tilde{{\bf r}}}_j = - \frac{\epsilon t_0^2}{m a^2} \pdif{\tilde{U}(\{ \tilde{\bf r} \})}{{\tilde{\bf r}}_j}
+\ee
+\item By choosing the unit of time as
+\be
+t_0= \sqrt{\frac{ma^2}{\epsilon}}
+\ee
+the equation of motion becomes
+\be
+\ddot{\tilde{{\bf r}}}_j = - \pdif{\tilde{U}(\{ \tilde{\bf r} \})}{{\tilde{\bf r}}_j}
+\ee
+which results in a parameter-free equation.
+\item As mentioned earlier, various physical quantities are conserved in this system. Therefore, if the discretization is not handled carefully, the accumulation of errors can lead to the violation of conservation laws, resulting in incorrect computational results.
+\item The following sections introduce a symplectic and highly accurate discretization method (numerical integration) to prevent error accumulation.
+\ei
+\end{frame}
+
+
+\subsection{Position Verlet Method}
+\begin{frame}[allowframebreaks]
+\frametitle{\bf \thesection.\thesubsection~\insertsubsection}
+\tk{\fbox{Position Verlet Method}}\\
+In this section, we introduce the Verlet method, a highly accurate discretization technique. Specifically, the method described below is referred to as the \TK{Position Verlet Method} (original paper~\cite{Verlet1967Phys.Rev.}, reference books~\cite{Frenkel2001,Allen2017,Okazaki2011}).
+\bi
+\item The Verlet method is a discretization of the equation of motion using the central difference method.
+\item In the central difference method, performing the \fbox{forward difference} and \fbox{backward difference} at time $t$ yields:
+\be
+{\bf r}_j(t+\Delta t) = {\bf r}_j(t)+\dot{{\bf r}}_j(t)\Delta t+\frac{1}{2!}\ddot{{\bf r}}_j(t)(\Delta t)^2+\frac{1}{3!}\dddot{{\bf r}}_j(t)(\Delta t)^3+{\cal O}((\Delta t)^4)
+\label{upper}
+\ee
+\be
+{\bf r}_j(t-\Delta t) = {\bf r}_j(t)-\dot{{\bf r}}_j(t)\Delta t+\frac{1}{2!}\ddot{{\bf r}}_j(t)(\Delta t)^2-\frac{1}{3!}\dddot{{\bf r}}_j(t)(\Delta t)^3+{\cal O}((\Delta t)^4).
+\label{bottom}
+\ee
+\item Adding Eq.~(\ref{upper}) and Eq.~(\ref{bottom}) gives:
+\bea
+{\bf r}_j(t+\Delta t) &=& 2{\bf r}_j(t)-{\bf r}_j(t-\Delta t)+\ddot{{\bf r}}_j(t)(\Delta t)^2+{\cal O}((\Delta t)^4), \nonumber\\
+&=& 2{\bf r}_j(t)-{\bf r}_j(t-\Delta t)+\underbrace{\frac{{\bf F}_j(t)}{m}(\Delta t)^2}_{(*)\mathrm {very\ small}}+{\cal O}((\Delta t)^4)
+\label{pverlet}
+\eea
+\item Simultaneously, subtracting Eq.~(\ref{bottom}) from Eq.~(\ref{upper}) gives the velocity relation:
+\bea
+\dot{{\bf r}}_j(t) = \frac{{\bf r}_j(t+\Delta t)-{\bf r}_j(t-\Delta t)}{2\Delta t }+{\cal O}((\Delta t)^2)
+\eea
+\item Solving this, we obtain a precision of ${\cal O} ((\Delta t)^3)$ for position and ${\cal O} (\Delta t) $ for velocity. Although the precision of velocity is not high, it does not lead to error accumulation. The higher precision of the position equation ensures that error accumulation is minimized. This type of numerical integration method is known as the \tk{Position Verlet Method}.
+\item \TK{However, the Position Verlet Method has numerical issues.} 
+\item In Eq.~(\ref {pverlet}), the term marked (*) is extremely small compared to the other terms.
+\item This leads to risks of significant rounding errors, so the Position Verlet Method is generally not used in molecular dynamics calculations.
+\item While the mathematical structure remains the same, a method called the \TK{Velocity Verlet Method} is used to avoid these risks. The Velocity Verlet Method is explained below.
+\ei
+\end{frame}
+\subsection{Velocity Verlet Method}
+\begin{frame}[allowframebreaks]
+\frametitle{\bf \thesection.\thesubsection~\insertsubsection}
+\tk{\fbox{Velocity Verlet Method}}~\cite{Frenkel2001,Allen2017,Okazaki2011}
+\bi
+\item Here, we explain the Verlet method that avoids significant rounding errors (Velocity Verlet Method).
+\item First, the equation from Eq.~(\ref{pverlet}) can be rearranged as follows:
+\bea
+{\bf r}_j(t+\Delta t)&=& 2{\bf r}_j(t)-{\bf r}_j(t-\Delta t)+\frac{{\bf F}_j(t)}{m}(\Delta t)^2+{\cal O}((\Delta t)^4)\nonumber \\
+&=& {\bf r}_j(t)+ \frac{{\bf r}_j(t)}{2}+\frac{{\bf r}_j(t)}{2}  -{\bf r}_j(t-\Delta t)+\frac{{\bf F}_j(t)}{m}(\Delta t)^2+{\cal O}((\Delta t)^4)\nonumber\\
+&=& {\bf r}_j(t)+ \frac{1}{2}\left[2{\bf r}_j(t-\Delta t)-{\bf r}_j(t-2\Delta t)+\frac{{\bf F}_j(t-\Delta t)}{m}(\Delta t)^2\right] \nonumber \\ 
+&+& \frac{1}{2}{\bf r}_j(t) -{\bf r}_j(t-\Delta t)+\frac{{\bf F}_j(t)}{m}(\Delta t)^2 
++ {\cal O}((\Delta t)^4)\nonumber \\ 
+&=& {\bf r}_j(t)+\boxed{{\bf v}_j(t-\Delta t)\Delta t} + \frac{(\Delta t)^2}{2m}[{\bf F}_j(t)+{\bf F}_j(t-\Delta t)] + \frac{(\Delta t)^2}{2m}{\bf F}_j(t)+\boxed{\frac{(\Delta t)^3}{3!}{\bf \dddot{r}}_j(t)}
++ {\cal O}((\Delta t)^4) \nonumber \\
+&=& {\bf r}_j(t)+ {\bf v}_j(t)\Delta t + \frac{(\Delta t)^2}{2m}{\bf F}_j(t)+\frac{(\Delta t)^3}{3!}{\bf \dddot{r}}_j(t)
++ {\cal O}((\Delta t)^4) \nonumber \\
+\label{vverlet}
+\eea
+\item Here,
+\bea
+\frac{1}{2}\left[{\bf r}_j(t) -{\bf r}_j(t-2\Delta t)\right]-\frac{(\Delta t)^3}{3!}\mathbf{\dddot{r}}_j(t)= {\bf v}_j(t-\Delta t)\Delta t + {\cal O}((\Delta t)^4)
+\label{vel_o3}
+\eea
+is used.
+\item This gives the following relation:
+\bea
+{\bf v}_j(t)={\bf v}_j(t-\Delta t) + \frac{\Delta t}{2m}[{\bf F}_j(t)+{\bf F}_j(t-\Delta t)] + {\cal O}((\Delta t)^3)
+\eea
+
+
+
+\item The main computation for time evolution is performed with respect to the velocity, thereby avoiding significant rounding errors.
+\item Additionally, the precision of the velocity here is ${\cal O}((\Delta t)^2)$, which is quite high.\\
+\item Below are the key equations for the Velocity Verlet method:
+\ei
+\begin{alertblock}{(Summary) Velocity Verlet Method}
+\bea
+{\bf v}_j(t+\Delta t)={\bf v}_j(t)+\frac{\Delta t}{2m} \{{\bf F}_j(t+\Delta t)+{\bf F}_j(t)\}\\
+{\bf r}_j(t+\Delta t)= {\bf r}_j(t)+{\bf v}_j(t)\Delta t +\frac{(\Delta t)^2}{2m} {\bf F}_j(t)
+\label{verlet0}
+\eea
+\end{alertblock}
+However, \TK{terms of third order and below are omitted in the position update due to potential rounding errors.} Although personally, I am curious to see if including these third-order terms would change the results, I have not yet investigated it.
+
+\newpage
+When coding, you can perform the calculations extremely efficiently by following these steps:
+\begin{exampleblock}{Calculation Steps in the Velocity Verlet Method}
+\bi
+\item[(1)] ${\bf r}_j(t+\Delta t)= {\bf r}_j(t)+{\bf v}_j(t)\Delta t +\frac{(\Delta t)^2}{2m} {\bf F}_j(t)$
+\item[(2)] ${\bf v}'_j(t+\Delta t)= {\bf v}_j(t)+\frac{\Delta t}{2m} {\bf F}_j(t)$
+\item[(3)] Using ${\bf r}_j(t+\Delta t)$, compute ${\bf F}_j(t+\Delta t)$.
+\item[(4)] ${\bf v}_j(t+\Delta t)={\bf v}'_j(t+\Delta t)+\frac{\Delta t}{2m} {\bf F}_j(t+\Delta t)$
+\item[(5)] Return to (1) with updated time. 
+\ei
+\end{exampleblock}
+
+
+
+\newpage
+
+\begin{block}{Time-Reversal Symmetry}
+Starting from the discretized equations of the Velocity Verlet method (Equation \ref{verlet0}), it is possible to trace back the same trajectory by reversing time from $t+\Delta t \to t$. First, by rearranging the terms for velocity, we have:
+\bea
+{\bf v}_j(t)={\bf v}_j(t+\Delta t)+\frac{-\Delta t}{2m} \{{\bf F}_j(t+\Delta t)+{\bf F}_j(t)\}
+\eea
+Next, for position:
+\bea
+{\bf r}_j(t)&=&{\bf r}_j(t+\Delta t) - {\bf v}_j(t)\Delta t -\frac{(\Delta t)^2}{2m} {\bf F}_j(t)\nonumber\\
+&=&{\bf r}_j(t+\Delta t)-{\bf v}_j(t+\Delta t)\Delta t+\frac{(\Delta t)^2}{2m}[{\bf F}_j(t+\Delta t)+{\bf F}_j(t)]-\frac{(\Delta t)^2}{2m}{\bf F}_j(t)\nonumber\\
+&=&{\bf r}_j(t+\Delta t)-{\bf v}_j(t+\Delta t)\Delta t+\frac{(\Delta t)^2}{2m} {\bf F}_j(t+\Delta t)
+\eea
+which allows for reversing the trajectory.
+\end{block}
+
+\end{frame}
+\subsection{Assignment 7}
+\begin{frame}[allowframebreaks]
+\frametitle{\bf \thesection.\thesubsection~\insertsubsection}
+\begin{exampleblock}{\fbox{Assignment 7} Implementation of Molecular Dynamics Simulation (Classical MD)}
+\small 
+Consider a two-dimensional system confined within a periodic boundary with side length $L=40a$, consisting of $N=1024$ identical circular particles with diameter $a$. The inter-particle potential used here is repulsive only:
+\bea
+U(r_{jk}) = \epsilon\left(\frac{a_{jk}}{r_{jk}}\right)^{12}+ C_{jk} \quad (r_{jk}<a_{\rm cut}) \nonumber
+\eea
+where the cutoff length is set to $a_{\rm cut}=3.0a$. Using $a$ as the unit of length, $\epsilon$ as the unit of energy, and $t_0=\sqrt{ma^2/\epsilon}$ as the unit of time, answer the following questions:
+\bi
+\item[(1)] Using the Langevin heat bath constructed in Assignment 6, obtain the position coordinates $\{{\bf r}_j\}$ and velocities $\{{\bf v}_j\}$ of each particle in the thermal equilibrium state at a dimensionless temperature $T^*=k_BT/\epsilon = 0.9$.
+\item[(2)] Using the coordinates and velocities obtained in (1) as initial conditions, perform a molecular dynamics simulation. Show that the mechanical energy $U + K$ (where $K$ is the kinetic energy and $U$ is the potential energy) is conserved over time.
+\ei
+\end{exampleblock}
+
+The sample program for the seventh assignment (without list-based optimization), ``md.cpp", can be obtained from the GitHub repository \href{https://github.com/TakeshiKawasaki/2026-simulation-tutorial/tree/main/Lecture7}{\TK{\underbar{[Link]}}}. Please refer to and study it as needed.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{energy.pdf}
+\caption{Example solution for Assignment 7(2). It can be observed that the mechanical energy is conserved. Note that the energy per particle is displayed here.}
+\label{shear_cell_list}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+
+
+\section{Reference}
+\begin{frame}[allowframebreaks]{Reference}
+   % \scriptsize
+    \beamertemplatetextbibitems
+    \bibliographystyle{pnas2011.bst}
+    \bibliography{2022sim_tutorial.bib}
+\end{frame}
+
+%\begin{frame}   %% \newtheorem で新しい環境も作れる
+%\begin{thm}
+%定理型環境が使える。
+%使い方は普通の \LaTeX と同じ
+%\end{thm}
+%\pause
+
+%\begin{proof}
+%証明も書ける。
+%\end{proof}
+%\pause
+%\end{frame}
+
+%\begin{frame} 
+%\frametitle{物理学とは} 
+%\begin{columns}
+%\begin{column}{50mm}
+%\includegraphics[width=4cm]{fig1.pdf}
+%\end{column}
+%\begin{column}{60mm}
+%証明も書ける
+%\end{column}
+%\end{columns}
+%\end{frame}
+
+%\begin{frame}
+%\begin{columns}
+%\begin{column}{50mm}
+%\begin{exampleblock}{xxx}
+%\centering{columns 内の幅 40mm の column}
+%\end{exampleblock}
+%\end{column}
+%\begin{column}{60mm}
+%\begin{exampleblock}{xxx}
+%\centering{columns 内の幅 50mm の column}
+%\end{exampleblock}
+%\end{column}
+%\end{columns}
+%\end{frame}
+\end{document}
+
+Memo:
+（１）特例期間中は、対面の講義は行わず、NUCT にアップロードされた講義資料による自学・自習を基本とします。課題もNUCT上にアップロードしますので、問題兼解答用紙をダウンロードし、解答のうえ後日指示する場所に提出してください。通学ができず課題提出が困難である場合は不利益が生じないように対応しますので、川崎まで連絡をください。
+
+（２）教科書：新編力学（藤城敏幸著，東京教学社）を各自取得されることが望ましいです。講義はこれに準拠して構成します。
+
+（３）特例期間中、もともと講義が行われる予定であった時間・場所（金曜2限C25講義室）で，もともと講義を担当する予定であった教員（川崎）が，来室する学生の質問に対応します。4/17は学生番号9 桁の末尾 奇数番、4/24は偶数の学生を対象とします（いずれも第1回講義に関する内容）。最初の10分程度は本講義に関する方針説明を簡潔に行い、その後、講義・課題に関する各質問に対応します。
+
+（４）講義資料・課題は講義予定日の5日前までにはアップロードしますので、各自NUCTをチェックするようにしてください。
+
