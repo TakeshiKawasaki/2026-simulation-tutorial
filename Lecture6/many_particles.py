@@ -15,7 +15,7 @@ from matplotlib.patches import Circle
 
 resolution = 100 # the number of vertices
 Np=1024
-L=40.0
+L=60.0
 temp=[0.200,0.400,0.600,1.000]
 
 patches = [[] for i in range(4)]  #空の二重配列を定義
