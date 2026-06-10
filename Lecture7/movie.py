@@ -15,7 +15,7 @@ plt.rcParams["font.size"] = 30
 
 # ---- シミュレーション設定 ----
 Np = 1024
-L = 40.0
+L = 60.0
 temp = 1.000
 resolution = 500
 
